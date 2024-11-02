@@ -1,5 +1,5 @@
 # DigitalOcean Droplet Terraform Configuration
-This Terraform configuration creates a DigitalOcean Droplet(VM) Infrastructure with the following components:
+This Terraform configuration creates a DigitalOcean Droplet(VM) infrastructure with the following components:
 - VPC network
 - Droplet (VM) with user data
 - SSH key management
@@ -58,14 +58,19 @@ terraform workspace select dev
 terraform apply -var-file="environments/globals.tfvars" -var-file="environments/${terraform.workspace}/terraform.tfvars"
 ```
 # List workspaces:
+```bash
 terraform workspace list
+```
 
 # Switch between workspaces:
+```bash
 terraform workspace select dev
+```
 
 # Check current workspace:
+```bash
 terraform workspace show
-
+```
 
 ### Usage with Different Environments
 
@@ -137,4 +142,3 @@ export TF_VAR_environment="custom-env"
 2. Never commit sensitive data to version control
 
 3. Consider using remote state storage for team collaboration
-```
